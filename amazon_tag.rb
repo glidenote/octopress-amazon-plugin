@@ -86,7 +86,7 @@ module Jekyll
     end
 
     def render(context)
-      if @params =~ /(?<type>(text|small_image|medium_image|large_image)\s+)(?<asin>\S+)/i
+      if @params =~ /(?<type>(text|small_image.*|medium_image.*|large_image.*).*\s+)(?<asin>\S+)/i
         type = $~['type'].strip
         asin = $~['asin'].strip.gsub(/"|&ldquo;|&rdquo;/, '')
       else
@@ -115,16 +115,52 @@ module Jekyll
       '<a href="%s"><img src="%s" /></a>' % [url, image_url]
     end
 
+    def small_image_left(item)
+      url = item[:item_page_url]
+      image_url = item[:small_image_url]
+      '<a href="%s"><img src="%s" align="left" /></a>' % [url, image_url]
+    end
+
+    def small_image_right(item)
+      url = item[:item_page_url]
+      image_url = item[:small_image_url]
+      '<a href="%s"><img src="%s" align="right" /></a>' % [url, image_url]
+    end
+
     def medium_image(item)
       url = item[:item_page_url]
       image_url = item[:medium_image_url]
       '<a href="%s"><img src="%s" /></a>' % [url, image_url]
     end
 
+    def medium_image_left(item)
+      url = item[:item_page_url]
+      image_url = item[:medium_image_url]
+      '<a href="%s"><img src="%s" align="left" /></a>' % [url, image_url]
+    end
+
+    def medium_image_right(item)
+      url = item[:item_page_url]
+      image_url = item[:medium_image_url]
+      '<a href="%s"><img src="%s" align="right" /></a>' % [url, image_url]
+    end
+
     def large_image(item)
       url = item[:item_page_url]
       image_url = item[:large_image_url]
       '<a href="%s"><img src="%s" /></a>' % [url, image_url]
+    end
+
+    def large_image_left(item)
+      url = item[:item_page_url]
+      image_url = item[:large_image_url]
+      '<a href="%s"><img src="%s" align="left" /></a>' % [url, image_url]
+    end
+
+    def large_image_right(item)
+      url = item[:item_page_url]
+      image_url = item[:large_image_url]
+      '<a href="%s"><img src="%s" align="right" /></a>' % [url, image_url]
     end
 
   end

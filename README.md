@@ -21,13 +21,13 @@ or by gem command
 ### Get amazon_tab.rb
 
     cd plugins
-    wget https://raw.github.com/longkey1/octopress-amazon-plugin/master/amazon_tag.rb
+    wget https://raw.github.com/glidenote/octopress-amazon-plugin/master/amazon_tag.rb
 
 
 or by git-submodule
 
     cd /path/to/octopress
-    git submodule add git://github.com/longkey1/octopress-amazon-plugin.git plugins/amazon
+    git submodule add git://github.com/glidenote/octopress-amazon-plugin.git plugins/amazon
 
 
 ### Configuring
@@ -49,7 +49,7 @@ or by git-submodule
 
     {% amazon [type] [asin] %}
 
-type: text, small_image, medium_image, large_image
+type: `text`, `small_image`, `small_image_left`, `small_image_right`, `medium_image`, `medium_image_left`, `medium_image_right`, `large_image`, `large_image_left`, `large_image_right`
 
 ### Examples:
 
